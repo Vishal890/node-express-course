@@ -51,4 +51,22 @@ app.post('/login',function(req,res){
 
 })
 
+app.post('/test',function(req, res){
+	const name = req.body.name;
+	const age = req.body.age;
+
+	if(age>18){
+		res.json({
+			note:"testing the note",
+			success:true,
+			message:"you are an adult"
+		})
+	}else{
+		res.json({
+			note:"Got it",
+			success: false,
+			message:`Go watch pogo ${name}`
+		})
+	}
+})
 app.listen(8000,function(){console.log('server is listening')})
